@@ -98,8 +98,8 @@ span {
 /* 1) la bannière en pleine largeur */
 .banniere {
   width: 100%;
-  height: 700px; /* à ajuster */
-  background: url('../images/rabbi-accueil.jpg') center/cover no-repeat;
+  height: 700px; 
+  background: url(images/rabbi-accueil.jpg) center/cover no-repeat;
   position: relative;
   overflow: hidden;
 }

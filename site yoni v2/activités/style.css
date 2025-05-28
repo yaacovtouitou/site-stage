@@ -1,3 +1,7 @@
+/* ==============================
+   HEADER & NAVIGATION
+   ============================== */
+
 /* Centre tout le contenu du header */
 header {
   text-align: center;
@@ -5,48 +9,48 @@ header {
 
 /* Taille max et centrage du logo */
 header .logo {
-  display: block;        /* pour que margin auto fonctionne */
-  margin: 1rem auto;     /* espace au-dessus et en-dessous */
-  max-width: 200px;      /* largeur maxi souhaitée */
-  width: 100%;           /* responsive : 100% jusqu’à 200px */
-  height: auto;          /* conserve le ratio */
+  display: block;
+  margin: 1rem auto;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
 }
+
+/* Menu principal */
 nav > ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem 2rem;           /* 2 lignes avec espacement horizontal */
+  gap: 0.5rem 2rem;
   margin: 0;
-  padding: 0.5rem 0;          /* un peu de padding haut/bas */
+  padding: 0.5rem 0;
   background: #fff;
   list-style: none;
 }
 
-/* Chaque item de menu */
 nav > ul > li {
-  position: relative;         /* pour le sous-menu */
+  position: relative;
 }
 
-/* Les liens */
-nav > ul > li > a {
+/* Liens de navigation */
+nav > ul > li > a,
+nav > ul > li > span {
   display: block;
   padding: 0.3rem 0.6rem;
-  color: #001FFF;             /* bleu vif */
-  text-decoration: none;
+  color: #001FFF;
   text-transform: uppercase;
   font-weight: bold;
+  text-decoration: none;
   transition: background 0.2s;
+  cursor: pointer;
 }
 
-/* Survol simple */
-nav > ul > li:hover > a {
+nav > ul > li:hover > a,
+nav > ul > li:hover > span {
   background: rgba(0, 31, 255, 0.1);
 }
 
-/* =============================
-   SOUS-MENU
-   ============================= */
-/* on cache par défaut */
+/* Sous-menus */
 nav ul ul {
   display: none;
   position: absolute;
@@ -61,12 +65,10 @@ nav ul ul {
   z-index: 10;
 }
 
-/* on affiche au survol */
 nav > ul > li:hover > ul {
   display: block;
 }
 
-/* liens du sous-menu */
 nav ul ul li a {
   display: block;
   padding: 0.3rem 1rem;
@@ -74,16 +76,114 @@ nav ul ul li a {
   text-decoration: none;
 }
 
-/* hover sous-menu */
 nav ul ul li a:hover {
   background: rgba(0, 31, 255, 0.1);
 }
-span {
+
+/* ==============================
+   GALERIE PHOTO
+   ============================== */
+
+.conteneur-galerie {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 0 20px;
+}
+
+.bloc-texte {
+  flex: 1;
+  max-width: 40%;
+}
+
+.titre-galerie {
+  font-size: 2rem;
+  color: #f1c40f;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.texte-galerie {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Diaporama */
+.diaporama {
+  position: relative;
+  width: 50%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.diapos {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.diapo {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.diapo.active {
   display: block;
-  padding: 0.3rem 0.6rem;
-  color: #001FFF;
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: default;              /* pas de pointeur “clic” */
-  transition: background .2s;
+}
+
+.diapo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Flèches de navigation */
+.fleche {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: none;
+  font-size: 2rem;
+  padding: 0 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  z-index: 2;
+}
+
+.fleche.precedente {
+  left: 10px;
+}
+
+.fleche.suivante {
+  right: 10px;
+}
+
+.fleche:hover {
+  background: rgba(255,255,255,1);
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: #666;
 }
