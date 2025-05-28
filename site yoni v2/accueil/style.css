@@ -1,71 +1,197 @@
-/* reset basique */
-nav ul, nav ul ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Centre tout le contenu du header */
+header {
+  text-align: center;
 }
 
-/* menu principal */
-.main-nav {
+/* Taille max et centrage du logo */
+header .logo {
+  display: block;        /* pour que margin auto fonctionne */
+  margin: 1rem auto;     /* espace au-dessus et en-dessous */
+  max-width: 200px;      /* largeur maxi souhaitée */
+  width: 100%;           /* responsive : 100% jusqu’à 200px */
+  height: auto;          /* conserve le ratio */
+}
+nav > ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 0.5rem 2rem;           /* 2 lignes avec espacement horizontal */
+  margin: 0;
+  padding: 0.5rem 0;          /* un peu de padding haut/bas */
   background: #fff;
-  font-family: 'Trebuchet MS', sans-serif;
-  text-transform: uppercase;
-  gap: 1rem;
-  padding: 0.5rem 1rem;
+  list-style: none;
 }
 
-/* items */
-.main-nav .nav-item {
-  position: relative; /* pour le sous-menu */
+/* Chaque item de menu */
+nav > ul > li {
+  position: relative;         /* pour le sous-menu */
 }
 
-/* liens */
-.main-nav .nav-item > a {
+/* Les liens */
+nav > ul > li > a {
   display: block;
-  padding: 0.5rem 1rem;
-  color: #0045B5;       /* bleu vif */
+  padding: 0.3rem 0.6rem;
+  color: #001FFF;             /* bleu vif */
   text-decoration: none;
-  transition: 0.2s;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background 0.2s;
 }
 
-/* hover */
-.main-nav .nav-item > a:hover {
-  background: rgba(0,69,181, 0.1);
+/* Survol simple */
+nav > ul > li:hover > a {
+  background: rgba(0, 31, 255, 0.1);
 }
 
-/* élément actif */
-.main-nav .nav-item.active > a {
-  color: #FFC107;            
-  border: 2px solid #FFC107;
-  border-radius: 4px;
-  background: #fff;
-}
-
-/* sous-menu (apparition au hover) */
-.sub-nav {
+/* =============================
+   SOUS-MENU
+   ============================= */
+/* on cache par défaut */
+nav ul ul {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
   background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
   white-space: nowrap;
+  z-index: 10;
 }
 
-/* afficher au survol du parent */
-.main-nav .nav-item:hover .sub-nav {
+/* on affiche au survol */
+nav > ul > li:hover > ul {
   display: block;
 }
 
-/* style des items du sous-menu */
-.sub-nav li a {
-  padding: 0.4rem 1rem;
-  color: #0045B5;
+/* liens du sous-menu */
+nav ul ul li a {
+  display: block;
+  padding: 0.3rem 1rem;
+  color: #001FFF;
+  text-decoration: none;
 }
 
 /* hover sous-menu */
-.sub-nav li a:hover {
-  background: rgba(0,69,181, 0.1);
+nav ul ul li a:hover {
+  background: rgba(0, 31, 255, 0.1);
+}
+span {
+  display: block;
+  padding: 0.3rem 0.6rem;
+  color: #001FFF;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: default;              /* pas de pointeur “clic” */
+  transition: background .2s;
+}
+
+
+
+
+
+
+
+/* CSS */
+/* 1) la bannière en pleine largeur */
+.banniere {
+  width: 100%;
+  height: 700px; /* à ajuster */
+  background: url('../images/rabbi-accueil.jpg') center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 2) conteneur centré pour le texte */
+.texte-sur-banniere {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* 3) style des paragraphes */
+.texte-sur-banniere p {
+  color: #fff;                                  /* texte blanc */
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);      /* lisibilité */
+}
+
+
+
+
+
+/* container grille */
+.grille-cartes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  gap: 2rem;                              /* espacement horizontal et vertical */
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* style inchangé pour la carte */
+.carte {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* image pleine largeur */
+.carte__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* texte de la carte */
+.carte__texte {
+  padding: 1rem;
+  color: #555;
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+
+/* bouton */
+.btn {
+  margin: 1rem auto 1.5rem;
+  padding: 0.8rem 2rem;
+  background-color: #ffd500;
+  color: #00ccff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 40px;
+  box-shadow:
+    inset 0 -4px 8px rgba(0,0,0,0.2),
+    0 6px 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 -6px 10px rgba(0,0,0,0.25),
+    0 8px 16px rgba(0,0,0,0.25);
+}
+
+/* responsive : passe à 1 colonne sur petits écrans */
+@media (max-width: 800px) {
+  .grille-cartes {
+    grid-template-columns: 1fr;
+  }
 }
