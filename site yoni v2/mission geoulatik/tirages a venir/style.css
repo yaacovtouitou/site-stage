@@ -87,3 +87,24 @@ span {
   cursor: default;              /* pas de pointeur “clic” */
   transition: background .2s;
 }
+
+h1 {
+  text-align: center;           /* titre centré */
+  margin: 1rem 0;              /* espace au-dessus et en-dessous */
+  font-size: 1.5rem;           /* taille du titre */            /* couleur du texte */
+}
+/* Conteneur centré avec marges égales */
+.formulaire-container {
+  max-width: 800px;      /* largeur maxi du formulaire */
+  margin: 0 auto;        /* centre horizontalement */
+  padding: 0 1rem;       /* espace horizontal minimal sur mobile */
+  box-sizing: border-box;
+}
+
+/* L’iframe prend toute la largeur du conteneur */
+.formulaire-container iframe {
+  width: 100%;
+  height: 900px;         /* adapte la hauteur si besoin */
+  border: none;
+  display: block;
+}

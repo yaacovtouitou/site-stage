@@ -87,3 +87,46 @@ span {
   cursor: default;              /* pas de pointeur “clic” */
   transition: background .2s;
 }
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* On attend 4 lignes, mais elles se créent automatiquement dès qu’il y a assez d’éléments */
+  gap: 2rem;               /* Espace entre chaque “case” */
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Chaque .paracha occupe UNE case du grid */
+.paracha {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.paracha h2 {
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 1.8rem;
+  color: #004080;
+  margin-bottom: 1rem;
+}
+
+/* Conteneur responsive pour iframe Wordwall */
+.conteneur-wordwall {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* ratio 16:9 */
+  margin-bottom: 1rem;
+}
+.conteneur-wordwall iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

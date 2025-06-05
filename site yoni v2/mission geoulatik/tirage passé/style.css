@@ -87,3 +87,59 @@ span {
   cursor: default;              /* pas de pointeur “clic” */
   transition: background .2s;
 }
+/* 1) Conserver le titre centré, puis placer les <article> en inline-block */
+section {
+  text-align: center;    /* centre le <h2> ET les articles en inline-block */
+  margin-bottom: 3rem;   /* espace sous chaque section */
+}
+
+/* 2) Chaque <article.gagnant> devient un inline-block de largeur fixe */
+article.gagnant {
+  display: inline-block;      /* les 3 articles s’alignent côte à côte */
+  vertical-align: top;        /* aligne le haut de chaque carte */
+  width: 400px;               /* même largeur que précédemment */
+  margin: 0 1rem;             /* petit espace horizontal entre cartes */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+/* 3) Mise en forme interne inchangée */
+article.gagnant h3 {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 1.3rem;
+  color: #39e600;
+  text-shadow: 1px 1px 0 #000;
+  margin-bottom: 0.5rem;
+}
+
+article.gagnant p {
+  font-size: 0.95rem;
+  line-height: 1.3;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+
+article.gagnant p strong {
+  font-size: 1.1rem;
+  color: #004080;
+}
+
+article.gagnant img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+}
+
+/* 4) Responsive : sur petits écrans, empiler verticalement */
+@media (max-width: 600px) {
+  article.gagnant {
+    display: block;      /* passe en bloc pour occuper toute la largeur */
+    width: 100%;
+    max-width: 300px;    /* ne pas dépasser 300px de large */
+    margin: 1rem auto;   /* centré horizontalement */
+  }
+}
