@@ -11,6 +11,7 @@ header .logo {
   width: 100%;           /* responsive : 100% jusqu’à 200px */
   height: auto;          /* conserve le ratio */
 }
+
 nav > ul {
   display: flex;
   flex-wrap: wrap;
@@ -78,6 +79,7 @@ nav ul ul li a {
 nav ul ul li a:hover {
   background: rgba(0, 31, 255, 0.1);
 }
+
 span {
   display: block;
   padding: 0.3rem 0.6rem;
@@ -86,4 +88,49 @@ span {
   font-weight: bold;
   cursor: default;              /* pas de pointeur “clic” */
   transition: background .2s;
+}
+
+/* =============================
+   PARACHIOT EN GRILLE
+   ============================= */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Apparence de chaque paracha */
+.paracha {
+  text-align: center;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.paracha:hover {
+  transform: translateY(-5px);
+}
+
+/* Style de l’image */
+.image-paracha {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.image-paracha:hover {
+  transform: scale(1.03);
+}
+
+/* Titre de la paracha */
+.paracha h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: #333;
 }
