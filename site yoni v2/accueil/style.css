@@ -88,6 +88,13 @@ span {
   transition: background .2s;
 }
 
+nav a,
+nav span {
+  font-family: 'luckiest guy';
+  font-weight: 400px; 
+  font-size: 20px;
+-webkit-text-stroke: 0.5px #ffd400;
+}
 
 
 
@@ -98,12 +105,21 @@ span {
 /* 1) la bannière en pleine largeur */
 .banniere {
   width: 100%;
-  height: 700px; 
+  height: 1200px; /* hauteur fixe pour la bannière */
   background: url(images/rabbi-accueil.jpg) center/cover no-repeat;
   position: relative;
   overflow: hidden;
 }
-
+.banniere::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* noir à 50% */
+  z-index: 1;
+}
 /* 2) conteneur centré pour le texte */
 .texte-sur-banniere {
   position: absolute;
@@ -115,17 +131,29 @@ span {
   align-items: center;
   text-align: center;
   padding: 1rem;
+    position: relative;
+  z-index: 2; /* Au-dessus du ::before */
 }
 
 /* 3) style des paragraphes */
 .texte-sur-banniere p {
-  color: #fff;                                  /* texte blanc */
-  font-size: 1.5rem;
+  color: #FFC400;                               
+  font-size: 40px;
   margin: 0.5rem 0;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);      /* lisibilité */
+  text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.7); 
 }
 
-
+p.alfa {
+  font-family: 'Alfa';
+}
+p.police-2 {
+  font-family: 'Lobster';
+}
+p.police-3 {
+  font-family: 'arial';
+  font-size: 30px;
+  font-style: bold;
+}
 
 
 
@@ -194,4 +222,19 @@ span {
   .grille-cartes {
     grid-template-columns: 1fr;
   }
+}
+
+
+@font-face {
+  font-family: 'Alfa';
+  src: url('../fonts/AlfaSlabOne-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lobster';
+  src: url('../fonts/Lobster.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Luckiest Guy';
+  src: url('../fonts/LuckiestGuy.ttf') format('truetype');
 }
