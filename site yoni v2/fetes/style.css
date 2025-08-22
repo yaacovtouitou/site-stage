@@ -87,3 +87,52 @@ span {
   cursor: default;              /* pas de pointeur “clic” */
   transition: background .2s;
 }
+
+/* Définition des polices personnalisées */
+@font-face {
+  font-family: 'Alfa';
+  src: url('../fonts/AlfaSlabOne-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lobster';
+  src: url('../fonts/Lobster.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Luckiest Guy';
+  src: url('../fonts/LuckiestGuy.ttf') format('truetype');
+}
+
+/* Appliquer une police globale à tout le site */
+body {
+  font-family: 'Luckiest Guy', Arial, sans-serif; /* Tu peux changer par celle que tu veux */
+  font-size: 16px; /* Ajuste la taille globale si besoin */
+  font-weight: 400;
+}
+
+/* Menu de navigation */
+nav a,
+nav span {
+  font-family: 'Luckiest Guy', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  -webkit-text-stroke: 0.5px #ffd400; /* Optionnel : effet contour */
+  text-transform: uppercase;
+}
+
+/* Texte sur bannière */
+.texte-sur-banniere p {
+  font-size: 40px;
+}
+
+/* Paragraphes spécifiques avec polices personnalisées */
+p.alfa {
+  font-family: 'Alfa', serif;
+}
+p.police-2 {
+  font-family: 'Lobster', cursive;
+}
+p.police-3 {
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}

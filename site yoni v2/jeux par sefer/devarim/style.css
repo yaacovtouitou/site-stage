@@ -1,3 +1,24 @@
+/* === Import des polices personnalisées === */
+@font-face {
+  font-family: 'Alfa';
+  src: url('../../fonts/AlfaSlabOne-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lobster';
+  src: url('../../fonts/Lobster.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Luckiest Guy';
+  src: url('../../fonts/LuckiestGuy.ttf') format('truetype');
+}
+
+/* === Police globale pour le site === */
+body {
+  font-family: 'Luckiest Guy', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
 /* Centre tout le contenu du header */
 header {
   text-align: center;
@@ -5,36 +26,35 @@ header {
 
 /* Taille max et centrage du logo */
 header .logo {
-  display: block;        /* pour que margin auto fonctionne */
-  margin: 1rem auto;     /* espace au-dessus et en-dessous */
-  max-width: 200px;      /* largeur maxi souhaitée */
-  width: 100%;           /* responsive : 100% jusqu’à 200px */
-  height: auto;          /* conserve le ratio */
+  display: block;
+  margin: 1rem auto;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
 }
+
 nav > ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem 2rem;           /* 2 lignes avec espacement horizontal */
+  gap: 0.5rem 2rem;
   margin: 0;
-  padding: 0.5rem 0;          /* un peu de padding haut/bas */
+  padding: 0.5rem 0;
   background: #fff;
   list-style: none;
 }
 
 /* Chaque item de menu */
 nav > ul > li {
-  position: relative;         /* pour le sous-menu */
+  position: relative;
 }
 
 /* Les liens */
 nav > ul > li > a {
   display: block;
   padding: 0.3rem 0.6rem;
-  color: #001FFF;             /* bleu vif */
+  color: #001FFF;
   text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
   transition: background 0.2s;
 }
 
@@ -42,6 +62,55 @@ nav > ul > li > a {
 nav > ul > li:hover > a {
   background: rgba(0, 31, 255, 0.1);
 }
+
+/* SOUS-MENU */
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+nav > ul > li:hover > ul {
+  display: block;
+}
+
+nav ul ul li a {
+  display: block;
+  padding: 0.3rem 1rem;
+  color: #001FFF;
+  text-decoration: none;
+}
+
+nav ul ul li a:hover {
+  background: rgba(0, 31, 255, 0.1);
+}
+
+span {
+  display: block;
+  padding: 0.3rem 0.6rem;
+  color: #001FFF;
+  cursor: default;
+  transition: background .2s;
+}
+
+/* === Styles typographiques spécifiques pour nav et span === */
+nav a,
+nav span {
+  font-family: 'Luckiest Guy', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.05em #ffd400;
+}
+
 
 /* =============================
    SOUS-MENU
